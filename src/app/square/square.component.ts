@@ -18,22 +18,22 @@ export class SquareComponent implements OnInit {
 	@Output() squareClicked: EventEmitter<string> = new EventEmitter<string>();
 
 	newGame(){
-		this.image = "";
+		this.image = ""; // remove background image before starting a new game
 	}
 
-	onClick(event){
-		if( this.global.inProgress == true && this.image == ""){
-			if(this.global.playerOne){
+	onClick(event){ // square was clicked
+		if( this.global.inProgress == true && this.image == ""){ // if no game in progress don't do anything
+			if(this.global.playerOne){ // place X or O on square depending on who's turn it is
 				this.image = "url(assets/x.png)";
 			} else {
 				this.image = "url(assets/o.png)";
 			}
-			this.global.playerOne = !this.global.playerOne;
-			this.squareClicked.emit(this.index);
+			this.global.playerOne = !this.global.playerOne; // change to next player
+			this.squareClicked.emit(this.index); // notify other components that this turn is over
 		}
 	}
 	
-	winningSquare(player: number){
+	winningSquare(player: number){ // change background image to green X or O to show winning row
 		if(player == 1){
 			this.image = "url(assets/xWin.png)";
 		} else {
@@ -42,9 +42,9 @@ export class SquareComponent implements OnInit {
 	}
 
   ngOnInit() {
-		this.onResize(0);
+		this.onResize(0); // initialize to current screen size
 		
-		switch(this.index){
+		switch(this.index){ // set borders depending on where in the grid this square is
 			case "0":
 				this.borderColor="white black black white";
 				break;
@@ -78,11 +78,11 @@ export class SquareComponent implements OnInit {
   }		
 
 
-	onResize(event) {
-		var width = ((window.innerWidth - 80)) ;
-		if (width>570) { width=570; }
-		width = (width / 3);
-		this.width = width;
-		this.height = width;
+	onResize(event) { // change width and height to fit on screen
+		var width = ((window.innerWidth - 80)) ; // get window width - padding and possible scroll bar
+		if (width>570) { width=570; } // don't go larger than the maximum
+		width = (width / 3); // divide adjusted window width by 3
+		this.width = width; // set width
+		this.height = width; //set height
 	}
 }
