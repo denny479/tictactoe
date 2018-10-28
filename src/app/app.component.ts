@@ -1,8 +1,8 @@
 import { Component, ViewChild, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { GlobalService } from './global.service';
-import { StartComponent } from './start/start.component'
-import { PlayerComponent } from './player/player.component'
-import { BoardComponent } from './board/board.component'
+import { StartComponent } from './start/start.component';
+import { PlayerComponent } from './player/player.component';
+import { BoardComponent } from './board/board.component';
 
 @Component({
   selector: 'app-root',
