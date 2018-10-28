@@ -7,21 +7,21 @@ import { GlobalService } from '../global.service';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-	@Input() index: number;
-	image: string;
-	bgColor: string = "transparent";
+	@Input() index: number; // index of player, player 1 or player 2
+	image: string; // img is either X or O
+	bgColor: string = "transparent"; // div's background color
 	
-	updateBackground(){
-		if (this.index == 1){
-			if (this.global.playerOne){
+	updateBackground(){ // chnage background color if it is this player's turn
+		if (this.index == 1){ // if player 1
+			if (this.global.playerOne){ // if player 1's turn set green bg 
 				this.bgColor = "lightgreen";				
-			} else {
+			} else { // otherwise set bg transparent
 				this.bgColor = "transparent";
 			}
-		} else {
-			if (!this.global.playerOne){
-				this.bgColor = "lightgreen";				
-			} else {
+		} else { // player 2
+			if (!this.global.playerOne){ // if player 2
+				this.bgColor = "lightgreen"; // if player 2's turn set green bg 	
+			} else { // otherwise set bg transparen
 				this.bgColor = "transparent";
 			}			
 		}
@@ -33,22 +33,22 @@ export class PlayerComponent implements OnInit {
 		} else {
 			this.bgColor = "transparent";
 		}
-		if (this.index == 1){
+		if (this.index == 1){ // set img back to normal X or O
 			this.image = "assets/x.png";
 		} else {
 			this.image = "assets/o.png";
 		}
 	}
 	
-	gameOver(winner: number){
-		if (winner == this.index) {
-			this.bgColor = "lightblue";
-			if (this.index == 1){
+	gameOver(winner: number){ // change img and background to display winner
+		if (winner == this.index) { // if winner number matches this index
+			this.bgColor = "lightblue"; // change bg color
+			if (this.index == 1){ // change to green X or O
 				this.image = "assets/xWin.png";
 			} else {
 				this.image = "assets/oWin.png";
 			}
-		} else {
+		} else { //otherwise clear the background (needed to clear in case of a draw)
 			this.bgColor = "transparent";
 		}
 	}
@@ -56,7 +56,7 @@ export class PlayerComponent implements OnInit {
   constructor(private global: GlobalService) { }
 
   ngOnInit() {
-		if (this.index == 1){
+		if (this.index == 1){ // set image to X or O
 			this.image = "assets/x.png";
 		} else {
 			this.image = "assets/o.png";
