@@ -40,7 +40,7 @@ export class AppComponent {
 		}		
 	}
 		
-	constructor(private global: GlobalService){
+	constructor(public global: GlobalService){
 		
 	}
 	
