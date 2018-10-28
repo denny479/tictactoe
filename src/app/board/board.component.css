@@ -1,0 +1,12 @@
+#grid{
+	background-color: white;
+	margin: 20px auto 20px auto;
+	height: 570x;
+	max-width: 570px;
+	max-height: 570px;
+	
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+

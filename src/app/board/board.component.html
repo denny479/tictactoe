@@ -1,0 +1,14 @@
+<div #canvas id="grid"	
+	[style.width.px]="width"
+	[style.height.px]="height"
+	(window:resize)="onResize($event)"  >
+		<app-square index="0" (squareClicked) = "squareClick($event)"></app-square>
+		<app-square index="1" (squareClicked) = "squareClick($event)"></app-square>
+		<app-square index="2" (squareClicked) = "squareClick($event)"></app-square>
+		<app-square index="3" (squareClicked) = "squareClick($event)"></app-square>
+		<app-square index="4" (squareClicked) = "squareClick($event)"></app-square>
+		<app-square index="5" (squareClicked) = "squareClick($event)"></app-square>
+		<app-square index="6" (squareClicked) = "squareClick($event)"></app-square>
+		<app-square index="7" (squareClicked) = "squareClick($event)"></app-square>
+		<app-square index="8" (squareClicked) = "squareClick($event)"></app-square>
+</div>

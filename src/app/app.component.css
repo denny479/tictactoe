@@ -1,0 +1,68 @@
+app-root{
+	margin: 0;
+}
+
+#main {
+  margin: 0 auto;
+  border: 1px solid black;
+  background-color: #eee;
+  text-align: center;
+  font-size: 28px;  
+  font-weight: bold;
+  max-width: 1000px;
+}
+
+.container{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content:space-evenly;
+}
+
+h1{
+	margin: 0px;
+}
+
+@media screen and (max-width:855px){
+  app-start{
+    order: 1;
+		width: 100%;
+		height: 75px;
+  }
+  #player1{
+	  order: 2;
+	  width: auto;
+  }
+  #player2{
+	  order: 3;
+	  width: auto;
+  }
+}
+
+@media screen and (max-width:550px){
+	app-start{
+		height: 60px;
+  }	
+  #player1{
+ 		font-size: 22px;
+  }
+  #player2{
+ 		font-size: 22px;
+  }	
+}
+
+@media screen and (max-width:400px){
+	app-start{
+		height: 45px;
+  }	
+  #player1{
+ 		font-size: 18px;
+  }
+  #player2{
+ 		font-size: 18px;
+  }	
+	h1{
+		font-size: 30px;
+	}
+}
+

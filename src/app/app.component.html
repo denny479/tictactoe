@@ -1,0 +1,16 @@
+	<div id="main">
+		<h1>Tic Tac Toe</h1>
+		<div class="container">
+			<app-player id="player1" index=1></app-player>
+			<app-start (newGame) = "newGame($event)" ></app-start>
+			<app-player id="player2" index=2></app-player>
+		</div>
+		
+		<app-board
+			(squareClicked) = "squareClick($event)"
+			(gameOver) = "gameOver($event)" >
+		</app-board>
+
+	</div>
+<p>{{ global.test }}</p>
+<router-outlet></router-outlet>

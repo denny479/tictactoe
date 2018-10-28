@@ -1,0 +1,14 @@
+<div id="start">
+	<div id="turns" [style.visibility] = "turnOn">
+		<div id="inner">
+			{{ text }}
+		</div>
+	</div>
+	<div id="button" [style.visibility] = "buttonOn"
+			 (click)="onClick($event)"	>
+		<div id="inner">
+			{{ winner }}<br>
+			<span>click to start new game</span>
+		</div>
+	</div>
+</div>
